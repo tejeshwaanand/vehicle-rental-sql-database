@@ -59,13 +59,16 @@ This section explains how to run the database using **MySQL**, **PostgreSQL**, o
 ```sql
 CREATE DATABASE vehicle_rental;
 USE vehicle_rental;
+```
 ---
-Step 2 — Import the schema
+### **Step 2 — Import the schema**
+```sql
 SOURCE schema.sql;
-
-Step 3 — Insert sample data
+```
+### **Step 3 — Insert sample data**
+```sql
 SOURCE sample_data.sql;
-
+```
 ✔ Database is ready!
 
 You can now run SELECT, JOIN, and transaction queries.
@@ -109,23 +112,26 @@ All tables will appear automatically
 
 📝 Example Queries
 1️⃣ Check available vehicles
+```sql
 SELECT v.Make, v.Model, r.Location_ID, r.Rental_Cost
 FROM Vehicles v
 JOIN Vehicle_Rentals r ON v.Vehicle_ID = r.Vehicle_ID
 WHERE r.Availability = TRUE;
-
+```
 2️⃣ Get customer reservations
+```sql
 SELECT res.Reservation_ID, c.Name, v.Make, v.Model, res.Pickup_Date
 FROM Reservations res
 JOIN Customers c ON res.Customer_ID = c.Customer_ID
 JOIN Vehicles v ON res.Vehicle_ID = v.Vehicle_ID;
-
+```
 3️⃣ View vehicles with damage reports
+```sql
 SELECT r.Rental_ID, c.Name, v.Make, v.Model, r.Damage_Details
 FROM Rentals r
 JOIN Customers c ON r.Customer_ID = c.Customer_ID
 JOIN Vehicles v ON r.Vehicle_ID = v.Vehicle_ID;
-
+```
 👨‍💻 Author
 
 Tejeshwa Anand
