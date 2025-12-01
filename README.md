@@ -73,7 +73,7 @@ SOURCE sample_data.sql;
 
 You can now run SELECT, JOIN, and transaction queries.
 
-▶️ 2. Using MySQL Workbench
+## ▶️ ** 2. Using MySQL Workbench**
 
 Open Workbench
 
@@ -87,18 +87,19 @@ sample_data.sql → Run
 
 Refresh schemas → tables appear automatically
 
-▶️ 3. Using PostgreSQL
+## ▶️ ** 3. Using PostgreSQL**
 
 (PostgreSQL does not support SOURCE, so use psql.)
 
 Step 1 — Create DB:
+```sql
 createdb vehicle_rental
-
+```
 Step 2 — Import:
 psql vehicle_rental < schema.sql
 psql vehicle_rental < sample_data.sql
 
-▶️ 4. Using GUI Tools (DBeaver / TablePlus / Oracle SQL Developer)
+## ▶️ ** 4. Using GUI Tools (DBeaver / TablePlus / Oracle SQL Developer)**
 
 Create a new database connection
 
@@ -110,7 +111,7 @@ First select schema.sql, then sample_data.sql
 
 All tables will appear automatically
 
-📝 Example Queries
+## 📝 ** Example Queries**
 1️⃣ Check available vehicles
 ```sql
 SELECT v.Make, v.Model, r.Location_ID, r.Rental_Cost
